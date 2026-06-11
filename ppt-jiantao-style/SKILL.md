@@ -49,8 +49,9 @@ Gold-standard exemplars to match: **thesis-defense / formal decks** and **Englis
   - **Red `C00000`** — the one take-home line, and inline highlight of a key species/reagent (e.g. *CP[6]*, *MPTZ²⁺*) or a **red box/arrow** on a figure. Used sparingly (a handful of times per deck).
   - Body text near-black; white only on a colored band.
   - Do **not** use Material-Indigo, teal, or pastel tint palettes.
-- **Citation line** (Times New Roman, ~14–16 pt, bottom) on any slide showing a published figure.
-- **Page numbers** bottom-corner on multi-slide decks.
+- **No bottom-left grey footnote / method-note line.** Do **not** add a small grey caption at the bottom of a slide (assay conditions, "n = …, grouped CV", model settings, dataset notes). If the audience needs that detail it goes in **speaker notes**, never as a grey line on the slide. The *only* bottom-left small text allowed is a **citation**, and only when the slide shows someone else's **published** figure (Times New Roman, ~14–16 pt, for attribution) — never on a slide of Jiantao's own data.
+- **Concept diagrams — light, not heavy.** When you draw a flow / concept diagram from boxes and arrows, make each box an **outline only: a thin colored border, NO fill (transparent), with the text in that same color.** A solid-filled box looks clunky and heavy. Keep connectors **thin and light** — a hairline arrow or a slim line in a muted/light tone; **never a chunky solid dark-navy arrow block.**
+- **Page numbers** bottom-right on multi-slide decks.
 - **Bilingual is normal:** Chinese narrative + English chemical terms / figure labels / citations. Match the language Jiantao writes in.
 
 ## Secondary mode — native data slide (use sparingly)
@@ -83,7 +84,9 @@ For each slide confirm:
 - [ ] Title is a conclusion sentence (results) or a clean noun phrase (method/divider), navy/deep-blue
 - [ ] Exactly one red `C00000` take-home line; red also only on key-species highlights / annotation boxes
 - [ ] Arial (+ 黑体 for Chinese headings, Times New Roman for citations); navy/red palette only
-- [ ] 16:9; citation on literature figures; page numbers; backup slides after "Thank you"
+- [ ] **No bottom-left grey method/footnote line** (conditions, n, model settings → speaker notes); a citation appears only for someone else's published figure
+- [ ] **Concept-diagram boxes are outlined (colored border, no fill, colored text), not solid-filled; arrows are thin/light, not chunky dark-navy**
+- [ ] 16:9; page numbers; backup slides after "Thank you"
 - [ ] Nothing clipped or overlapping; figures not stretched out of aspect
 
 If a slide looks like a clean corporate template, it is wrong — rebuild it around the figure.

@@ -89,7 +89,7 @@ def citation(slide, text, y=6.95):
     r=p.add_run(); r.text=text; r.font.name='Times New Roman'; r.font.size=Pt(15); r.font.color.rgb=GREY
 ```
 
-A results slide is then just: `title(...)` (a conclusion sentence) → one or two `hero_figure(...)` placed large → `keyline(...)` → `citation(...)`. That's the whole slide.
+A results slide is then just: `title(...)` (a conclusion sentence) → one or two `hero_figure(...)` placed large → `keyline(...)`, and `citation(...)` **only if the figure is from someone else's published paper**. **Never add a bottom grey method-note line** (conditions, *n*, model settings, dataset notes) — that detail goes in speaker notes (`slide.notes_slide.notes_text_frame.text = "…"`), not on the slide.
 
 ## 6. Annotation craft — red box / arrow on a figure
 
@@ -105,6 +105,31 @@ def red_arrow(slide, x, y, w, h):
     sp=slide.shapes.add_shape(MSO_SHAPE.RIGHT_ARROW, Inches(x),Inches(y),Inches(w),Inches(h))
     sp.fill.solid(); sp.fill.fore_color.rgb=RGBColor(0xC0,0,0); sp.line.fill.background()
 ```
+
+## 6b. Concept diagrams — outlined boxes + light arrows (清爽, not 笨重)
+
+When you build a flow / concept diagram from boxes, make each box an **outline only**: a thin colored border, **no fill**, with the text in that same color. A solid-filled box looks heavy and clunky. Keep the connectors **thin and light** — a hairline line in a muted tone — **never a chunky solid dark-navy arrow block**.
+
+```python
+def concept_box(slide, x, y, w, h, text, color=NAVY):   # outline only, transparent, colored text
+    sp=slide.shapes.add_shape(MSO_SHAPE.ROUNDED_RECTANGLE, Inches(x),Inches(y),Inches(w),Inches(h))
+    sp.fill.background()                                  # NO fill — this is the key to "清爽"
+    sp.line.color.rgb=color; sp.line.width=Pt(1.25); sp.shadow.inherit=False
+    tf=sp.text_frame; tf.word_wrap=True; p=tf.paragraphs[0]; p.alignment=PP_ALIGN.CENTER
+    r=p.add_run(); r.text=text; r.font.name='Arial'; r.font.size=Pt(15); r.font.bold=True
+    r.font.color.rgb=color                               # text in the border color
+
+def light_arrow(slide, x, y, w, color=RGBColor(0x90,0x90,0x90)):  # thin grey line, slim arrowhead
+    cn=slide.shapes.add_connector(2, Inches(x),Inches(y),Inches(x+w),Inches(y))  # 2 = straight
+    cn.line.color.rgb=color; cn.line.width=Pt(1.25)
+    # add a small arrowhead on the line end:
+    ln=cn.line._get_or_add_ln()
+    from pptx.oxml.ns import qn
+    he=ln.makeelement(qn('a:tailEnd'), {'type':'triangle','w':'sm','len':'sm'}); ln.append(he)
+    cn.shadow.inherit=False
+```
+
+Use a muted grey (or a thin same-color line) for connectors, not navy `002060` fill. The diagram should read as light line-art, not a row of heavy blocks.
 Highlight a key reagent/species inline by coloring just that run red (`run.font.color.rgb = RED`) — used for things like *CP[6]*, *MPTZ²⁺*.
 
 ## 7. pptxgenjs equivalent (if building in Node)
