@@ -2,6 +2,8 @@
 
 Authoritative tokens and slide-construction recipe for Jiantao's **default** style. Use with `SKILL.md`. The point of every content slide is the **figure**; everything here is in service of placing a figure large and labelling it with the least text that does the job.
 
+**Native & editable (Rule 2):** the only image you add is a pre-existing scientific figure you can't vectorize. Everything *you* produce is built native — charts via `addChart` / `add_chart` (carrying their data), tables via `addTable` / `add_table`, and **all** text (titles, take-home line, labels, captions, equations) in editable text boxes with selectable fonts. Never paste a PNG of a chart, table, or text you made. Litmus test: if you created it, Jiantao must be able to click it and edit the value/word/font/color.
+
 ## 1. Color tokens (restrained navy + red)
 
 ```js
