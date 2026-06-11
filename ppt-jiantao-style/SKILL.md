@@ -44,6 +44,7 @@ Gold-standard exemplars to match: **thesis-defense / formal decks** and **Englis
 
 - **Aspect ratio: 16:9** (13.33 × 7.5 in). His archive is mostly 4:3, but new decks should be 16:9.
 - **Fonts:** **Arial** for everything (Latin *and* inside Chinese sentences); **黑体 (SimHei)** for Chinese headings; **Times New Roman** for citations/equations. (Calibri/Consolas are NOT this style.)
+- **Type sizes (fixed):** content-slide **title 26 pt**, **body text 22 pt**, **table text 22 pt**. (Cover/divider larger; citation/page-number smaller — see `reference.md`.)
 - **Color — restrained, navy + red:**
   - Title / headings: navy **`002060`** (formal) or deep blue **`000099`** (talks); blue **`0000CC`** for secondary emphasis.
   - **Red `C00000`** — the one take-home line, and inline highlight of a key species/reagent (e.g. *CP[6]*, *MPTZ²⁺*) or a **red box/arrow** on a figure. Used sparingly (a handful of times per deck).

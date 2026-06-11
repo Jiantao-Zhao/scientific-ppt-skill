@@ -38,14 +38,16 @@ const S = {
   cover:    36,   // cover title (34–40)
   divider:  36,   // section-divider title (32–40, bold, centered)
   outline:  30,   // 目录 / outline header
-  title:    28,   // content-slide title (26–30, bold, centered)
-  keyline:  22,   // the red take-home line (20–24)
-  body:     20,   // body / labels (18–22)
+  title:    26,   // content-slide title — 26, bold, centered (fixed)
+  keyline:  22,   // the red take-home line
+  body:     22,   // body / labels — 22 (fixed)
+  table:    22,   // table cell text — 22 (fixed)
   small:    16,   // sub-labels, numbered I/II/III
   cite:     15,   // citation / footnote (14–16)
   page:     12,
 };
 ```
+**Fixed sizes (use these): title 26, body 22, table 22.** (His archive decks are 4:3 at slightly smaller pt; these are for 16:9. Don't shrink figures to hit a text size — text yields to the figure.)
 (His archive decks are 4:3 at slightly smaller pt; these are scaled for 16:9. Don't shrink figures to hit a text size — text yields to the figure.)
 
 ## 4. Geometry
@@ -70,7 +72,7 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 NAVY=RGBColor(0,0x20,0x60); RED=RGBColor(0xC0,0,0); GREY=RGBColor(0x59,0x59,0x59)
 
-def title(slide, text, size=28, color=NAVY):
+def title(slide, text, size=26, color=NAVY):
     tb=slide.shapes.add_textbox(Inches(0.4), Inches(0.22), Inches(12.5), Inches(0.8))
     p=tb.text_frame.paragraphs[0]; p.alignment=PP_ALIGN.CENTER
     r=p.add_run(); r.text=text; r.font.name='Arial'; r.font.size=Pt(size); r.font.bold=True; r.font.color.rgb=color
